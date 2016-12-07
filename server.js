@@ -27,3 +27,22 @@ server.register([
 		console.log(`Server running at ${server.info.uri}`);
 	});
 });
+
+/* Example server.register's option (registering plugin) to add prefix of /v1 to the routes.
+// Benefit for versioning API
+
+server.register(
+	{
+		register: Hello,
+		options: {}
+	},
+	{
+		routes: {
+			prefix: '/v1'
+		}
+	},
+	(err) => {
+		// Start server
+	}
+);
+*/
