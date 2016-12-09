@@ -42,6 +42,23 @@ exports.register = function (server, options, next) {
 	const deleteUser = function (userId, callback) {
 		return store.del(userId, callback);
 	};
+
+	const getAllUser = function (request, reply) {
+		var content = [];
+		store.createReadStream()
+		  .on('data', function (data) {
+			content = content.concat(data.value);
+		  })
+		  .on('error', function (err) {
+		    return reply(Boom.notFound(err));
+		  })
+/*		  .on('close', function () {
+		    console.log('Stream closed');
+		  })
+*/		  .on('end', function () {
+		    return reply(content);
+		  })
+	};
 	
 	server.route([
 		{
@@ -117,6 +134,14 @@ exports.register = function (server, options, next) {
 					});
 				},
 				description: 'Delete a user'
+			}
+		},
+		{
+			method: 'GET',
+			path: '/user',
+			config: {
+				handler: getAllUser,
+				description: 'Retrieve all user'
 			}
 		}
 	]);
