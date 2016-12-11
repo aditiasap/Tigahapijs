@@ -27,6 +27,12 @@ const manifest = {
 		},
 		{
 			'blipp': {}
+		},
+		{
+			'inert': {}
+		},
+		{
+			'./list-file.js': {}
 		}
 	]
 };
