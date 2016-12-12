@@ -15,5 +15,9 @@
     "hapi-level": "^5.0.1",
     "inert": "^4.0.3",
     "rejoice": "^2.2.1"
+  },
+  "devDependencies": {
+    "code": "^4.0.0",
+    "lab": "^11.2.1"
   }
 }
