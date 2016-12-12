@@ -38,5 +38,6 @@ Glue.compose(manifest, {relativeTo: __dirname}, (err, server) => {
 	server.start((err) => {
 //		console.log(`Server running at ${server.info.uri}`);
 	});
+	// exporting server for test purpose 
 	module.exports = server;
 });
