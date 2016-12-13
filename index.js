@@ -1,3 +1,10 @@
+/*
+Next :
+- use Confidence to modularize configuration
+- For test, use Nock to mock HTTP request
+- For test, use Sinon to mock and stub 
+*/
+
 /* Example of using Glue to start server.
 To start, run : node index.js
 
