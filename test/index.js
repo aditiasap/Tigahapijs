@@ -5,9 +5,9 @@ const server = require('../index.js');
 
 const lab = exports.lab = Lab.script();
 
-/* lab.experiment to group some tests.
-lab.experiment('Test Part 1', () => {
-*/
+// lab.experiment to group some tests.
+lab.experiment('Test Part 1: ', () => {
+
 	lab.test('It will return Hello World', (done) => {
 		// inject API is provided by shot module
 		server.inject('/', (res) => {
@@ -18,6 +18,4 @@ lab.experiment('Test Part 1', () => {
 			done();
 		});
 	});
-/*
 });
-*/
